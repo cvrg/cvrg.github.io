@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
-  <title>Snow Landing Page Theme | Created By Visual Soldiers</title>
+  <title>Coverage</title>
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -267,11 +267,11 @@
             
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                <form role="form">
+                <form role="form" action="https://docs.google.com/forms/d/19-Sd7o9U-xmO4gQkh4AK1JQc9EH1aCm8FSXDIZ_7Gns/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
                   <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email" validate>
                   </div>
-                  <button type="submit" class="btn btn-red btn-lg">Request Invite</button>
+                  <button type="submit" class="btn btn-red btn-lg" onclick="postContactToGoogle()">Request Invite</button>
                 </form>
               </div>
             </div><!--End Form row-->
@@ -342,6 +342,26 @@
     <script src="js/wow.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+    function postContactToGoogle() {
+        var email = $('#Email').val();
+
+            $.ajax({
+                url: "https://docs.google.com/forms/d/19-Sd7o9U-xmO4gQkh4AK1JQc9EH1aCm8FSXDIZ_7Gns/formResponse",
+                data: { "entry_1917891149": email},
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function () {
+                        window.location.replace("ThankYou.html");
+                    },
+                    200: function () {
+                        window.location.replace("ThankYou.html");
+                    }
+                }
+            });
+    }
+</script>
 
    
     </body>
