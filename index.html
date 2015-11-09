@@ -344,20 +344,13 @@
     <script src="js/main.js"></script>
     <script>
     function postContactToGoogle() {
-        var email = $('#Email').val();
+        var email = $('#email').val();
 
             $.ajax({
                 url: "https://docs.google.com/forms/d/19-Sd7o9U-xmO4gQkh4AK1JQc9EH1aCm8FSXDIZ_7Gns/formResponse",
                 data: { "entry_1917891149": email},
                 type: "POST",
-                dataType: "xml",
-                statusCode: {
-                    0: function () {
-                        window.location.replace("ThankYou.html");
-                    },
-                    200: function () {
-                        window.location.replace("ThankYou.html");
-                    }
+                dataType: "xml"
                 }
             });
     }
